@@ -10,16 +10,16 @@ import androidx.viewbinding.ViewBinding
 import com.likefirst.meyouhouse.util.Inflate
 
 abstract class BaseFragment<VB : ViewBinding>(
-    private val inflate: Inflate<VB>
+    private val inflate: Inflate<VB>,
 
-) : Fragment() {
+    ) : Fragment() {
     private var _binding: VB? = null
     protected val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         _binding = inflate.invoke(inflater, container, false)
 
@@ -35,6 +35,7 @@ abstract class BaseFragment<VB : ViewBinding>(
         super.onDestroyView()
         _binding = null
     }
+
 
     protected abstract fun initAfterBinding()
 

@@ -1,7 +1,312 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#f8f9fa">
+
+    <View
+      android:layout_width="0dp"
+      android:layout_height="250dp"
+      android:background="#556fff"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+      android:id="@+id/logoImageView"
+      android:layout_width="79.3dp"
+      android:layout_height="31.7dp"
+      android:layout_marginStart="20dp"
+      android:layout_marginTop="13.2dp"
+      android:background="@drawable/ic_icon_home_logo"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+      android:id="@+id/bell"
+      android:layout_width="30dp"
+      android:layout_height="0dp"
+      android:layout_marginEnd="20dp"
+      android:src="@drawable/ic_icon_home_bell"
+      app:layout_constraintBottom_toBottomOf="@id/logoImageView"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="@id/logoImageView" />
+
+    <TextView
+      android:id="@+id/addressTextView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="20dp"
+      android:layout_marginTop="56.7dp"
+      android:text="서울빌라 1단지 301호"
+      android:textColor="@color/white"
+      android:textSize="26.7sp"
+      android:textStyle="bold"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/logoImageView" />
+
+    <TextView
+      android:id="@+id/detailAddressTextView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:text="서울특별시 동작구 신길 1"
+      android:textColor="@color/white"
+      android:textSize="10sp"
+      app:layout_constraintStart_toStartOf="@id/addressTextView"
+      app:layout_constraintTop_toBottomOf="@id/addressTextView" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.cardview.widget.CardView
+      android:id="@+id/billCardView"
+      android:layout_width="0dp"
+      android:layout_height="118.7dp"
+      android:layout_marginStart="20dp"
+      android:layout_marginTop="53.7dp"
+      android:layout_marginEnd="20dp"
+      android:background="@color/white"
+      android:elevation="20dp"
+      app:cardCornerRadius="5dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/detailAddressTextView">
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/billLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+          android:id="@+id/billTitle"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="20dp"
+          android:layout_marginTop="20dp"
+          android:text="관리비 조회"
+          android:textColor="#222222"
+          android:textSize="15sp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+          android:id="@+id/moneyTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="3dp"
+          android:text="100,000"
+          android:textColor="@color/black"
+          android:textSize="26.7sp"
+          android:textStyle="bold"
+          app:layout_constraintStart_toStartOf="@id/billTitle"
+          app:layout_constraintTop_toBottomOf="@id/billTitle" />
+
+        <TextView
+          android:id="@+id/wonTextVIew"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="3.3dp"
+          android:text="원"
+          android:textColor="#222222"
+          android:textSize="16.7sp"
+          app:layout_constraintBottom_toBottomOf="@+id/moneyTextView"
+          app:layout_constraintStart_toEndOf="@id/moneyTextView"
+          app:layout_constraintTop_toTopOf="@+id/moneyTextView"
+          app:layout_constraintVertical_bias="0.7" />
+
+        <TextView
+          android:id="@+id/date"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="20dp"
+          android:layout_marginBottom="16.7dp"
+          android:text="2022년 6월"
+          android:textColor="#626262"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+          android:id="@+id/btn1"
+          android:layout_width="54.7dp"
+          android:layout_height="wrap_content"
+          android:layout_marginEnd="20dp"
+          android:background="@drawable/round_button_5"
+          android:minHeight="15dp"
+          android:backgroundTint="#556fff"
+          android:padding="2dp"
+          android:text="결제"
+          android:textColor="@color/white"
+          android:textSize="13.3sp"
+          app:layout_constraintBottom_toBottomOf="@id/moneyTextView"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="@id/moneyTextView" />
+      </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+      app:layout_constraintBottom_toBottomOf="parent"
+      android:layout_marginBottom="200dp"
+      android:id="@+id/serachCardView"
+      android:layout_width="0dp"
+      android:layout_height="191.7dp"
+      android:background="@color/white"
+      android:elevation="20dp"
+      app:cardCornerRadius="5dp"
+      android:layout_marginStart="20dp"
+      android:layout_marginEnd="20dp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/billCardView"
+      android:layout_marginTop="20dp"
+      app:layout_constraintEnd_toEndOf="parent">
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+          android:id="@+id/secondSubTitle"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          android:layout_marginTop="23dp"
+          android:layout_marginStart="20.7dp"
+          android:textSize="15sp"
+          android:text="공과금 조회"
+          android:textColor="@color/black"
+          android:textStyle="bold"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"/>
+
+        <ImageView
+          android:id="@+id/iconWater"
+          android:src="@drawable/ic_icon_home_water"
+          app:layout_constraintStart_toStartOf="@id/secondSubTitle"
+          app:layout_constraintTop_toBottomOf="@id/secondSubTitle"
+          android:layout_marginTop="20dp"
+          android:layout_width="26.7dp"
+          android:layout_height="26.7dp"/>
+        <TextView
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textStyle="normal"
+          android:textSize="13.3sp"
+          android:textColor="#222222"
+          app:layout_constraintTop_toTopOf="@id/iconWater"
+          app:layout_constraintBottom_toBottomOf="@id/iconWater"
+          app:layout_constraintStart_toEndOf="@id/iconWater"
+          android:layout_marginStart="14dp"
+          android:text="수도세 조회하기"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+          android:id="@+id/btn2"
+          android:layout_width="54.7dp"
+          android:layout_height="wrap_content"
+          android:layout_marginEnd="20dp"
+          android:background="@drawable/round_button_5"
+          android:minHeight="15dp"
+          android:backgroundTint="#556fff"
+          android:padding="2dp"
+          android:text="결제"
+          android:textColor="@color/white"
+          android:textSize="13.3sp"
+          app:layout_constraintBottom_toBottomOf="@id/iconWater"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="@id/iconWater" />
+
+
+        <ImageView
+          android:id="@+id/iconElec"
+          android:layout_width="26.7dp"
+          android:layout_height="26.7dp"
+          android:layout_marginTop="13.3dp"
+          app:layout_constraintTop_toBottomOf="@id/iconWater"
+          app:layout_constraintStart_toStartOf="@id/secondSubTitle"
+          android:src="@drawable/ic_icon_home_elec"/>
+
+        <TextView
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textStyle="normal"
+          android:textSize="13.3sp"
+          android:textColor="#222222"
+          app:layout_constraintTop_toTopOf="@id/iconElec"
+          app:layout_constraintBottom_toBottomOf="@id/iconElec"
+          app:layout_constraintStart_toEndOf="@id/iconElec"
+          android:layout_marginStart="14dp"
+          android:text="전기세 조회하기"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+          android:id="@+id/btn4"
+          android:layout_width="54.7dp"
+          android:layout_height="wrap_content"
+          android:layout_marginEnd="20dp"
+          android:background="@drawable/round_button_5"
+          android:minHeight="15dp"
+          android:backgroundTint="#556fff"
+          android:padding="2dp"
+          android:text="결제"
+          android:textColor="@color/white"
+          android:textSize="13.3sp"
+          app:layout_constraintBottom_toBottomOf="@id/iconGas"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="@id/iconGas" />
+
+        <ImageView
+          android:id="@+id/iconGas"
+          android:layout_width="26.7dp"
+          android:layout_height="26.7dp"
+          android:layout_marginTop="13.3dp"
+          app:layout_constraintTop_toBottomOf="@id/iconElec"
+          app:layout_constraintStart_toStartOf="@id/secondSubTitle"
+          android:src="@drawable/ic_icon_home_gas"/>
+
+
+
+        <TextView
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textStyle="normal"
+          android:textSize="13.3sp"
+          android:textColor="#222222"
+          app:layout_constraintTop_toTopOf="@id/iconGas"
+          app:layout_constraintBottom_toBottomOf="@id/iconGas"
+          app:layout_constraintStart_toEndOf="@id/iconGas"
+          android:layout_marginStart="14dp"
+          android:text="가스비 조회하기"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+          android:id="@+id/btn3"
+          android:layout_width="54.7dp"
+          android:layout_height="wrap_content"
+          android:layout_marginEnd="20dp"
+          android:background="@drawable/round_button_5"
+          android:minHeight="15dp"
+          android:backgroundTint="#556fff"
+          android:padding="2dp"
+          android:text="결제"
+          android:textColor="@color/white"
+          android:textSize="13.3sp"
+          app:layout_constraintBottom_toBottomOf="@id/iconElec"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="@id/iconElec" />
+
+
+
+
+
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

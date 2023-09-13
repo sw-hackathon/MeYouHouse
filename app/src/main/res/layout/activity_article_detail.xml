@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/scrollviewContainer"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    app:layout_constraintBottom_toTopOf="@id/commentEditorContainer"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent">
+
+
+    <androidx.core.widget.NestedScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+          android:id="@+id/actionBarLayout"
+          android:layout_width="0dp"
+          android:layout_height="59.3dp"
+          android:gravity="center_vertical"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.0"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent">
+
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="@string/header_community"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+          android:id="@+id/greyline"
+          android:layout_width="0dp"
+          android:layout_height="0.7dp"
+          android:background="#e5e5e5"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/actionBarLayout" />
+
+        <TextView
+          android:id="@+id/userAnonymousTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="20dp"
+          android:text="@string/user_name_anonymous"
+          android:textColor="@color/black"
+          android:textStyle="bold"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/greyline" />
+
+        <TextView
+          android:id="@+id/detailDate"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="3.3dp"
+          app:layout_constraintStart_toStartOf="@id/userAnonymousTextView"
+          app:layout_constraintTop_toBottomOf="@id/userAnonymousTextView"
+          tools:text="06/22 19:39" />
+
+        <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/detailImageRecyclerView"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+
+          android:layout_marginTop="10dp"
+          android:nestedScrollingEnabled="false"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/detailDate" />
+
+        <TextView
+          android:id="@+id/detailBodyTextView"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dp"
+          android:layout_marginEnd="20dp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="@id/userAnonymousTextView"
+          app:layout_constraintTop_toBottomOf="@id/detailImageRecyclerView"
+          tools:text="302호 인간적으로 너무 시끄럽다 조용히좀 해라 잠좀 자게" />
+
+
+        <View
+          android:id="@+id/commentLine"
+          android:layout_width="0dp"
+          android:layout_height="0.7dp"
+          android:layout_marginTop="15dp"
+          android:background="#e5e5e5"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/detailBodyTextView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/commentRecyclerView"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dp"
+          android:nestedScrollingEnabled="false"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/commentLine" />
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/commentEditorContainer"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent">
+
+    <EditText
+      android:id="@+id/commentEditText"
+      android:layout_width="0dp"
+      android:layout_height="48dp"
+      android:background="@null"
+      android:hint="댓글을 입력하세요"
+      android:paddingStart="20dp"
+      android:paddingEnd="10dp"
+      android:textSize="12sp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toStartOf="@id/commentSubmitButton"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+      android:id="@+id/commentSubmitButton"
+      android:layout_width="26.7dp"
+      android:layout_height="26.7dp"
+      android:layout_marginEnd="13.8dp"
+      android:background="@drawable/ic_icon_comment_black"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

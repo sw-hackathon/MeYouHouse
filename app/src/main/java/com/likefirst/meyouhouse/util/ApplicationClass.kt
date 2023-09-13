@@ -3,6 +3,7 @@ package com.likefirst.meyouhouse.util
 import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
+import android.util.Log
 import androidx.appcompat.app.AppCompatDelegate
 import com.likefirst.meyouhouse.config.XAccessTokenInterceptor
 import okhttp3.OkHttpClient
@@ -14,7 +15,7 @@ import java.net.SocketException
 import java.util.concurrent.TimeUnit
 
 class ApplicationClass : Application() {
-    companion object{
+    companion object {
         const val X_ACCESS_TOKEN: String = "x-access-token"         // JWT Token Key
         const val TAG: String = "MeYou-APP"                      // Log, SharedPreference
         const val APP_DATABASE = "$TAG-DB"

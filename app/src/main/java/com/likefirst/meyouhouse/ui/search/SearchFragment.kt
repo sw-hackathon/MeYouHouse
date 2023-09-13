@@ -5,6 +5,5 @@ import com.likefirst.meyouhouse.ui.BaseFragment
 
 class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding::inflate) {
     override fun initAfterBinding() {
-
     }
 }

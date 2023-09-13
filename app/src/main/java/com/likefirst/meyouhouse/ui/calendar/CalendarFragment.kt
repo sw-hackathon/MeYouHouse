@@ -5,6 +5,6 @@ import com.likefirst.meyouhouse.ui.BaseFragment
 
 class CalendarFragment : BaseFragment<FragmentCalendarBinding>(FragmentCalendarBinding::inflate) {
     override fun initAfterBinding() {
-        TODO("Not yet implemented")
+
     }
 }

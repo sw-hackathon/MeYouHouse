@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="66dp"
+  android:layout_margin="5dp"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <TextView
+    android:id="@+id/articleBodyTextView"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:textColor="#626262"
+    tools:text = "안녕하세요~ 반갑습니다. 해커톤은 재밌어!1231231231231231231231231"
+    android:layout_marginStart="20dp"
+    android:maxLines="1"
+    android:ellipsize="end"
+    android:layout_marginEnd="20dp"
+    app:layout_constraintBottom_toTopOf="@id/showCommentButton"/>
+
+  <TextView
+    android:id="@+id/communityDate"
+    android:layout_width="wrap_content"
+    tools:text="6/22 03:00"
+    app:layout_constraintTop_toBottomOf="@id/articleBodyTextView"
+    app:layout_constraintStart_toStartOf="@id/articleBodyTextView"
+    android:layout_marginTop="10dp"
+    android:layout_height="wrap_content"/>
+
+  <androidx.appcompat.widget.AppCompatButton
+    android:id="@+id/showCommentButton"
+    android:layout_width="13.9dp"
+    android:layout_height="13.1dp"
+    android:background="@drawable/ic_icon_comment_blue"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginEnd="35.4dp"
+    android:layout_marginBottom="12.4dp"
+    app:layout_constraintBottom_toBottomOf="parent"/>
+
+  <TextView
+    android:id="@+id/commentCountTextView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="12sp"
+    app:layout_constraintStart_toEndOf="@id/showCommentButton"
+    app:layout_constraintTop_toTopOf="@id/showCommentButton"
+    android:layout_marginLeft="8.7dp"
+    android:textColor="#556fff"
+    app:layout_constraintBottom_toBottomOf="@id/showCommentButton"
+    tools:text="5"/>
+
+  <View
+    android:id="@+id/greyline"
+    android:layout_width="0dp"
+    android:layout_height="0.7dp"
+    android:background="#e5e5e5"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+     />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

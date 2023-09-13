@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/actionBarLayout"
+    android:layout_width="0dp"
+    android:layout_height="59.3dp"
+    android:gravity="center_vertical"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+
+    <TextView
+      android:id="@+id/cancelTextButton"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="20dp"
+      android:text="@string/header_cancel"
+      android:textColor="#626262"
+      android:textSize="15sp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="5dp"
+      android:text="@string/header_posting"
+      android:textColor="@color/black"
+      android:textSize="18sp"
+      android:textStyle="bold"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+      android:id="@+id/submitTextButton"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="18.7dp"
+      android:text="@string/header_submit"
+      android:textColor="#556fff"
+      android:textSize="15sp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <View
+    android:id="@+id/greyline"
+    android:layout_width="0dp"
+    android:layout_height="0.7dp"
+    android:background="#BFB6B6"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/actionBarLayout" />
+
+
+  <EditText
+    android:id="@+id/bodyEditText"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginTop="28.3dp"
+    android:layout_marginBottom="28.3dp"
+    android:background="@null"
+    android:gravity="top"
+    android:hint="@string/hint_posting_edit"
+    android:inputType="textMultiLine"
+    android:scrollHorizontally="true"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="@id/boaderline"
+    app:layout_constraintStart_toStartOf="@id/boaderline"
+    app:layout_constraintTop_toBottomOf="@id/boaderline" />
+
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/selectedPhotoRecyclerView"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginStart="5dp"
+    app:layout_constraintBottom_toBottomOf="@id/selectPhotoButton"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginEnd="30dp"
+    app:layout_constraintStart_toEndOf="@id/selectPhotoButton"
+    app:layout_constraintTop_toTopOf="@id/selectPhotoButton" />
+
+  <androidx.cardview.widget.CardView
+    android:id="@+id/selectPhotoButton"
+    android:layout_width="58.3dp"
+    android:layout_height="58.3dp"
+    android:layout_marginStart="30dp"
+    android:layout_marginTop="19.3dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:cardCornerRadius="5dp"
+    app:layout_constraintTop_toBottomOf="@id/greyline">
+
+    <ImageView
+      android:layout_width="25dp"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:src="@drawable/ic_icon_camera_grey"
+      android:layout_marginBottom="7dp"/>
+
+    <TextView
+      android:id="@+id/selectedImageCountTextView"
+      android:text="0/5"
+      android:textSize="11.3sp"
+      android:textColor="#626262"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="10dp"
+      android:layout_gravity="center|bottom"/>
+
+
+
+  </androidx.cardview.widget.CardView>
+
+  <View
+    android:id="@+id/boaderline"
+    android:layout_width="0dp"
+    android:layout_height="0.7dp"
+    android:layout_marginStart="30dp"
+    android:layout_marginTop="18.3dp"
+    android:layout_marginEnd="30dp"
+    android:background="#e5e5e5"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/selectPhotoButton" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
